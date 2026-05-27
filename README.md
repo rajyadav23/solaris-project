@@ -2,6 +2,12 @@
 
 **Premium 3D AI-powered renewable energy dashboard**
 
+## Live Project
+
+- Frontend: https://solaris-project-six.vercel.app
+- Backend API: https://solaris-project.onrender.com
+- ML API: https://solaris-ml-api.onrender.com
+
 ## ⚡ Instant Start
 ```
 Open  frontend/index.html  in your browser — works immediately, no install needed.
