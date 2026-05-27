@@ -1,0 +1,13 @@
+backend/vendor/
+backend/node_modules/
+backend/.env
+backend/storage/logs/*.log
+
+frontend/node_modules/
+
+ml-api/venv/
+ml-api/__pycache__/
+ml-api/**/*.pyc
+
+.DS_Store
+Thumbs.db

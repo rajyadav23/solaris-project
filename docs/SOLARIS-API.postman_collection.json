@@ -1,0 +1,64 @@
+{
+  "info": {
+    "name": "SOLARIS API Collection",
+    "description": "Full API collection for SOLARIS Energy Intelligence Platform",
+    "version": "3.0.0",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {"key": "base_url", "value": "http://localhost:8000/api"},
+    {"key": "token",    "value": "YOUR_TOKEN_HERE"}
+  ],
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST", "url": "{{base_url}}/register",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {"mode": "raw", "raw": "{\"name\":\"Test User\",\"email\":\"test@solaris.com\",\"password\":\"password\",\"password_confirmation\":\"password\"}"}
+          }
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST", "url": "{{base_url}}/login",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {"mode": "raw", "raw": "{\"email\":\"test@solaris.com\",\"password\":\"password\"}"}
+          }
+        }
+      ]
+    },
+    {
+      "name": "Energy",
+      "item": [
+        {"name": "Current Reading", "request": {"method": "GET", "url": "{{base_url}}/energy/current", "header": [{"key": "Authorization", "value": "Bearer {{token}}"}]}},
+        {"name": "Hourly Data",     "request": {"method": "GET", "url": "{{base_url}}/energy/hourly",  "header": [{"key": "Authorization", "value": "Bearer {{token}}"}]}},
+        {"name": "Daily Totals",    "request": {"method": "GET", "url": "{{base_url}}/energy/daily",   "header": [{"key": "Authorization", "value": "Bearer {{token}}"}]}}
+      ]
+    },
+    {
+      "name": "Predictions",
+      "item": [
+        {"name": "Solar 24h",  "request": {"method": "GET", "url": "{{base_url}}/predictions/solar",  "header": [{"key": "Authorization", "value": "Bearer {{token}}"}]}},
+        {"name": "Wind 24h",   "request": {"method": "GET", "url": "{{base_url}}/predictions/wind",   "header": [{"key": "Authorization", "value": "Bearer {{token}}"}]}},
+        {"name": "Weekly",     "request": {"method": "GET", "url": "{{base_url}}/predictions/weekly", "header": [{"key": "Authorization", "value": "Bearer {{token}}"}]}}
+      ]
+    },
+    {
+      "name": "Chatbot",
+      "item": [
+        {
+          "name": "Send Message",
+          "request": {
+            "method": "POST", "url": "{{base_url}}/chat",
+            "header": [{"key": "Authorization", "value": "Bearer {{token}}"}, {"key": "Content-Type", "value": "application/json"}],
+            "body": {"mode": "raw", "raw": "{\"message\":\"What is my current solar output?\"}"}
+          }
+        }
+      ]
+    }
+  ]
+}
