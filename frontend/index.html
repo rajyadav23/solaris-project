@@ -724,15 +724,15 @@ html,body{height:100%;background:var(--bg);color:var(--tx);font-family:'DM Sans'
 // CONFIG — all URLs and keys in one place
 // ══════════════════════════════════════════════════════
 const cfg = {
-  backendUrl:  localStorage.getItem('backendUrl')  || `${location.protocol}//${location.hostname || '127.0.0.1'}:8000`,
-  mlUrl:       localStorage.getItem('mlUrl')       || `${location.protocol}//${location.hostname || '127.0.0.1'}:8001`,
+  backendUrl:  localStorage.getItem('backendUrl')  || 'https://solaris-project.onrender.com',
+  mlUrl:       localStorage.getItem('mlUrl')       || 'https://solaris-ml-api.onrender.com',
   weatherKey:  localStorage.getItem('weatherKey')  || '',
   weatherCity: localStorage.getItem('weatherCity') || 'New Delhi',
   dataSource:  localStorage.getItem('dataSource')  || 'api',  // 'demo' or 'api'
   autoRefresh: true, show3d: true, showSlides: true, showParticles: true, notifications: true,
 };
-if(cfg.backendUrl.includes(':8080')) cfg.backendUrl=`${location.protocol}//${location.hostname || '127.0.0.1'}:8000`;
-if(cfg.mlUrl.endsWith(':8000')) cfg.mlUrl=`${location.protocol}//${location.hostname || '127.0.0.1'}:8001`;
+if(cfg.backendUrl.includes(':8080')) cfg.backendUrl='https://solaris-project.onrender.com';
+if(cfg.mlUrl.endsWith(':8000')) cfg.mlUrl='https://solaris-ml-api.onrender.com';
 cfg.dataSource='api';
 localStorage.setItem('backendUrl',cfg.backendUrl);
 localStorage.setItem('mlUrl',cfg.mlUrl);
