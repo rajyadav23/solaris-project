@@ -1,4 +1,4 @@
-# ☀️ SOLARIS — AI Energy Intelligence Platform v1.0
+# ☀️ SOLARIS — AI Energy Intelligence Platform v3.0
 
 **Premium 3D AI-powered renewable energy dashboard**
 
